@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
     private int mCounter = 0;
     Button btnadd;
     Button btnmin;
+    Button btnres;
     TextView txv;
 
     @Override
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btnadd = (Button) findViewById(R.id.btadd);
         txv = (TextView) findViewById(R.id.tx);
         btnmin = (Button) findViewById(R.id.btmin);
+        btnres = (Button) findViewById(R.id.btres);
 
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mCounter --;
+                txv.setText(Integer.toString(mCounter));
+            }
+        });
+
+        btnres.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCounter = 0;
                 txv.setText(Integer.toString(mCounter));
             }
         });
